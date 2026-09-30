@@ -1,4 +1,5 @@
 window.onload = function() {
+    alert('If you are on a mobile phone, switch the orientation to portrait so that the game looks much nicer.');
     alert('Player 2 gets 5 guesses to find a number between 1 and 100.');
     alert('Lowkey fried lmao');
 }
