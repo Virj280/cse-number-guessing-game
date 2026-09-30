@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guesser</title>
+    <link rel="stylesheet" href="stylesheet.css" type="text/css" charset="utf-8" />
+    <script src="script.js"></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <h1><b>Number Game!</b></h1>
+    <div class="numInput"> <!--Controls the input of a number-->
+        <input type="text"
+        name="number"
+        id="p1Number"
+        placeholder="enter a number">
+        <input type="button"
+                name="SetNum"
+                value="Enter Game!"
+                id="setButton" 
+                onclick="setNumber()">
+    </div> <!--sends a special message to player 2-->
+    <div class="hintInput">
+        <input type="text"
+                name="p1Hint"
+                placeholder="Send a hint to player 2..."
+                id="hint">
+        <input type="button"
+                name="sendHint"
+                value="Send hint!"
+                id="hintSender"
+                onclick="sendHint()">
+    </div>
+</body>
+</html>
