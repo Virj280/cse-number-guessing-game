@@ -87,6 +87,7 @@ function checkGuess() {
             alert('You fool.');
             alert('The number was ' + secretNum + '.');
             window.close();
+            return;
         } else if (guess > secretNum) {
             tooHigh();
         } else {
