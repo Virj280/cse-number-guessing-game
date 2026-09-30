@@ -14,22 +14,26 @@
         <input type="text"
         name="number"
         id="p1Number"
+        title="Type a valid number between 0-100 here."
         placeholder="enter a number">
         <input type="button"
                 name="SetNum"
                 value="Enter Game!"
-                id="setButton" 
+                id="setButton"
+                title="Enter the game, handing the device to player 2 so they can guess."
                 onclick="setNumber()">
     </div> <!--sends a special message to player 2-->
     <div class="hintInput">
         <input type="text"
                 name="p1Hint"
                 placeholder="Send a hint to player 2..."
-                id="hint">
+                id="hint"
+                title="Add your hint here.">
         <input type="button"
                 name="sendHint"
                 value="Send hint!"
                 id="hintSender"
+                title="Send your hint to player 2, or update your previous hint."
                 onclick="sendHint()">
     </div>
 </body>
