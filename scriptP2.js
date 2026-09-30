@@ -37,12 +37,14 @@ function startGame() {
   guessInput.type = "text";
   guessInput.placeholder = "Enter a guess here...";
   guessInput.id = "guess";
+  guessInput.title = "Input a valid number as your guess.";
   document.body.appendChild(guessInput);
 
   const guessEnter = document.createElement("input");
   guessEnter.type = "button";
   guessEnter.value = "Check Guess!";
   guessEnter.id = "guessButton";
+  guessEnter.title = "Enter your guess to be checked.";
   guessEnter.onclick = checkGuess;
   document.body.appendChild(guessEnter);
 }
