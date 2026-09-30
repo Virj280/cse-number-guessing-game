@@ -48,6 +48,7 @@ function startGame() {
 }
 
 function checkGuess() {
+  guessesLeft--;
   let secretNum = localStorage.getItem('setNum');
   const guess = document.getElementById("guess").value;
   
@@ -70,10 +71,8 @@ function checkGuess() {
         alert("What did you think was going to happen?"); 
         window.close();
     } else if (guess.trim() === "" || isNaN(guess) || !Number.isInteger(Number(guess)) || guess < 1 || guess > 100) { 
-        alert('Twin your guess lies outside the range');
-        alert('That or your answer is just terrible'); 
+        outsideRange();
     } else { 
-        guessesLeft--;
         if (guess == secretNum) {
             guessedCorrect();
             clearInterval(countdownTimer);
@@ -87,13 +86,14 @@ function checkGuess() {
             alert('The number was ' + secretNum + '.');
             window.close();
         } else if (guess > secretNum) {
-            alert('Guess is too high!');
+            tooHigh();
         } else {
-            alert('Guess is too low!');
+            tooLow();
         }
     }
 }
 
+// One time use buttons
 function clearButton() {
     const button = document.getElementById('setButton');
     button.style.display = 'none';
@@ -102,4 +102,31 @@ function clearButton() {
 function guessedCorrect() {
   const button = document.getElementById('guessButton');
   button.style.display = 'none';
+}
+
+
+// Fake alerts
+function showMessage(message) {
+    const modal = document.getElementById("messageBox");
+    const messageText = document.getElementById("message");
+
+    messageText.textContent = message;
+    modal.style.display = "flex";
+}
+
+function tooHigh() {
+    showMessage("Guess is too high!");
+}
+
+
+function tooLow() {
+    showMessage("Guess is too low!");
+}
+
+function outsideRange() {
+    showMessage("Your guess is either outside the range, or not a valid input.");
+}
+
+function closeMessage() {
+  document.getElementById("messageBox").style.display = "none";
 }
