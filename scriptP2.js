@@ -55,7 +55,7 @@ function checkGuess() {
   const guess = document.getElementById("guess").value;
   
   if (guess == 67) { 
-        alert('Wow'); 
+        alert('Wow.'); 
         alert('I had expected player 1 to do this, but...'); 
         alert('It was you.'); 
         alert('...'); 
@@ -72,6 +72,7 @@ function checkGuess() {
         alert('...'); 
         alert("What did you think was going to happen?"); 
         window.close();
+        return;
     } else if (guess.trim() === "" || isNaN(guess) || !Number.isInteger(Number(guess)) || guess < 1 || guess > 100) { 
         outsideRange();
     } else { 
