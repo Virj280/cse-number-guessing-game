@@ -26,6 +26,7 @@ function setNumber() {
         alert('...'); 
         alert("What did you think was going to happen?"); 
         window.close(); 
+        return;
     } 
     else if (answerInput.trim() === "" || isNaN(answer) || !Number.isInteger(answer) || answer < 1 || answer > 100) { 
         alert('PLEASE just put an integer within the range I beg of you'); 
@@ -46,6 +47,7 @@ function sendHint() {
         alert('You thought you were slick with using the hint function, right?');
         alert('Think again.');
         window.close();
+        return;
     }
     else {
         let hintInput = document.getElementById("hint").value;
